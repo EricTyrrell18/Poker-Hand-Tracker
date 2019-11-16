@@ -1,0 +1,14 @@
+
+<a class="btn btn-outline-primary" href="<%= edit_user_password_path %>" role="button">
+ Edit Account
+</a>
+<div style="padding-left: 10px;">
+  <a class="btn btn-outline-success" href="<%= destroy_user_session_path %>" role="button" >
+    Log Out
+  </a>
+</div>
+<div style="padding-left: 10px;">
+  <a class"btn btn-outline-success" href="<%= user_poker_sessions_path(current_user.id) %>" role="button">
+    Sessions
+  </a>
+</div>
