@@ -1,6 +1,0 @@
-<h1>New Poker Session</h1>
-<%= link_to 'Back', user_poker_session_index_path(current_user.id) %>
-<%= form_for @poker_session, url:  user_poker_session_index_path(current_user.id, @poker_session.id) do |f| %>
-  <%= render 'form', poker_session: @poker_session, f: f %>
-<% end %>
-

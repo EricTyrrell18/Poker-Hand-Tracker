@@ -1,4 +1,4 @@
-class PokerSessionController < ApplicationController
+class PokerSessionsController < ApplicationController
   def index
   end
   def show
@@ -6,14 +6,14 @@ class PokerSessionController < ApplicationController
   end
   
   def new
-    @poker_session = current_user.poker_sessions.build
-    @players = @poker_session.players.build
+    @poker_session = PokerSession.new 
+    @poker_session.players.build
   end
 
   def create
     @poker_session = current_user.poker_sessions.build(create_params)
     if @poker_session.save
-      redirect_to user_poker_session_index_path(current_user.id)
+      redirect_to user_poker_sessions_path(current_user.id)
     else
 	render 'new'
     end
@@ -41,7 +41,8 @@ class PokerSessionController < ApplicationController
   private
     def create_params
       params.require(:poker_session).permit(
-                      :date_played
+                      :date_played,
+		      players_attributes: [:name]
                     )
     end
 end
