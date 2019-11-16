@@ -7,11 +7,12 @@ class PokerSessionController < ApplicationController
   
   def new
     @poker_session = current_user.poker_sessions.build
+    @players = @poker_session.players.build
   end
 
   def create
     @poker_session = current_user.poker_sessions.build(create_params)
-    if @poker_session.save!
+    if @poker_session.save
       redirect_to user_poker_session_index_path(current_user.id)
     else
 	render 'new'
