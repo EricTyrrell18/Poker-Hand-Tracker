@@ -1,0 +1,12 @@
+
+<table>
+  <th>ID</th>
+  <th>Date Played</th>
+  <% poker_sessions.each do |poker_session| %>
+    <tr>
+      <td> <%= poker_session.id %></td>
+      <td><%= poker_session.date_played %></td>
+    </tr>
+  <% end %>
+</table>
+
