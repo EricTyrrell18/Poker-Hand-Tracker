@@ -1,2 +1,12 @@
 <h1>Show Poker Session</h1>
 <%= @poker_session.date_played %>
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% @poker_session.players.each do |player| %>
+    <tr>
+     <td><%= player.name  %></td>
+    </tr>
+  <% end %>
+</table>
