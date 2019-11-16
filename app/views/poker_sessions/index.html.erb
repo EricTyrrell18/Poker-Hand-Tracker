@@ -1,5 +1,5 @@
 <h1>Poker Sessions index</h1>
 
 <%= link_to 'New Session', new_user_poker_session_path(current_user.id) %>
-
+<%= link_to 'Home', root_url %> 
 <%= render 'poker_session_table', poker_sessions: current_user.poker_sessions %>

@@ -1,12 +1,22 @@
 <h1>Show Poker Session</h1>
+<%= link_to "Back", user_poker_sessions_path(current_user.id) %>
 <%= @poker_session.date_played %>
-<table>
-  <tr>
-    <th>Name</th>
-  </tr>
-  <% @poker_session.players.each do |player| %>
+<div id="players">
+  <table class="player-table">
     <tr>
-     <td><%= player.name  %></td>
+      <th>Name</th>
     </tr>
-  <% end %>
-</table>
+    <% @poker_session.players.each do |player| %>
+      <tr>
+        <td><%= player.name  %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<div id="hands">
+  <%= link_to 'Add Hand', new_poker_session_hand_path(@poker_session) %>
+  <table class="hand-table">
+
+  </table>
+<div>

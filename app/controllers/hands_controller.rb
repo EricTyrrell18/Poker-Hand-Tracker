@@ -1,4 +1,4 @@
-class HandController < ApplicationController
+class HandsController < ApplicationController
   def index
   end
   
@@ -6,7 +6,7 @@ class HandController < ApplicationController
   end
   
   def new
-    @hand = 
+    @hand = Hand.new
   end
   
   def create

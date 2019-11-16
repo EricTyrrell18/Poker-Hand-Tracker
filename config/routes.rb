@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   
   resources :user, shallow: true do
     resources :poker_sessions do
+      resources :hands
+      resources :players, only: [:show]
     end
   end
 
