@@ -17,6 +17,8 @@ class PokerSessionController < ApplicationController
     end
   end
   def edit
+    @poker_session = current_user.poker_sessions.find(params[:id])
+
   end
 
   private
