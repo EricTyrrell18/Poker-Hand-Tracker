@@ -1,1 +1,15 @@
 <h1>Poker Sessions index</h1>
+
+<%= link_to 'New Session', new_user_poker_session_path(current_user.id) %>
+
+<table>
+  <th>ID</th>
+  <th>Date Played</th>
+  <% current_user.poker_sessions.each do |poker_session| %>
+    <tr>
+      <td> <%= poker_session.id %></td>
+      <td><%= poker_session.date_played %></td>
+    </tr>
+  <% end %>
+</table>
+
