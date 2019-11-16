@@ -5,7 +5,7 @@ class PokerSessionController < ApplicationController
   end
   
   def new
-    @poker_session = current_user.poker_sessions.new
+    @poker_session = current_user.poker_sessions.build
   end
 
   def create
@@ -17,8 +17,17 @@ class PokerSessionController < ApplicationController
     end
   end
   def edit
+    @poker_session = current_user.poker_sessions.find(params[:format])
+
+  end
+  def update 
     @poker_session = current_user.poker_sessions.find(params[:id])
 
+    if @poker_session.update(create_params)
+      redirect_to @poker_session
+    else
+      render 'edit'
+    end
   end
 
   private
