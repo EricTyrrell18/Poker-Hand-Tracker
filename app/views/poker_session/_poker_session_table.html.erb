@@ -6,7 +6,11 @@
     <tr>
       <td><%= poker_session.id %></td>
       <td><%= poker_session.date_played %></td>
-      <td><%= link_to "Edit", edit_poker_session_path(current_user.id, poker_session.id)  %></td>
+      <td><%= link_to "Link", poker_session_path(poker_session.id)%></td>
+      <td><%= link_to "Edit", edit_poker_session_path(current_user.id, poker_session.id) %></td>
+      <td><%= link_to "Delete", poker_session_path(poker_session),
+                       method: :delete,
+		       data: { confirm: 'Are you sure?' }%></td>
     </tr>
   <% end %>
 </table>

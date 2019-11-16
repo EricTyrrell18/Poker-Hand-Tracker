@@ -2,6 +2,7 @@ class PokerSessionController < ApplicationController
   def index
   end
   def show
+    @poker_session = current_user.poker_sessions.find(params[:id])
   end
   
   def new
@@ -29,7 +30,13 @@ class PokerSessionController < ApplicationController
       render 'edit'
     end
   end
+  
+  def destroy
+    @poker_session = current_user.poker_sessions.find(params[:id])
+    @poker_session.destroy
 
+    redirect_to user_poker_session_index_path(current_user)
+  end
   private
     def create_params
       params.require(:poker_session).permit(
