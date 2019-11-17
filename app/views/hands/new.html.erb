@@ -1,6 +1,6 @@
-<h1>New Hand</h1>
-<%= link_to 'back', user_poker_sessions_path(current_user.id) %>
-
+<%= render 'deck' %>
+<br>
+<%= render 'board' %>
 <%= simple_form_for(@hand, url: poker_session_hands_path(@poker_session.id)) do |f| %>
   <%= f.input :result %>
   <% 5.times do %>

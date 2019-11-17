@@ -14,4 +14,7 @@
  *= require_self
  */
 
+#board img[data-selected=true]{
+  outline: 1px solid red;
+}
 

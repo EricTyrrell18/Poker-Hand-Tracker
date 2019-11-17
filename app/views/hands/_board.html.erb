@@ -1,0 +1,17 @@
+<div id="board" class="container">
+  
+  <span id="flop">
+    <% 3.times do %>
+      <%= image_tag 'PNG/gray_back.png', size: "37x75" %>
+    <% end %>
+  </span>
+
+  <span id="turn">
+    <%= image_tag 'PNG/gray_back.png', size: "37x75" %>
+  </span>
+
+  <span>
+    <%= image_tag 'PNG/gray_back.png', size: "37x75", id: "river", data: {selected: true} %>
+  </span>
+
+</div>

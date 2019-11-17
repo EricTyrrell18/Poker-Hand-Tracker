@@ -1,0 +1,9 @@
+<div id="deck" class="container" >
+  <% create_deck[0..25].each do |link| %>
+    <%= image_tag link, size: "37x75" %>
+  <% end %>
+  <br>
+  <% create_deck[26..51].each do |link| %>
+    <%= image_tag link, size: "37x75" %>
+  <% end %>
+</div>
