@@ -36,7 +36,7 @@ class PokerSessionsController < ApplicationController
     @poker_session = current_user.poker_sessions.find(params[:id])
     @poker_session.destroy
 
-    redirect_to user_poker_session_index_path(current_user)
+    redirect_to user_poker_sessions_path(current_user)
   end
   private
     def create_params

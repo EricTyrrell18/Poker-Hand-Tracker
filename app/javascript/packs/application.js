@@ -8,7 +8,8 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("jquery")
-require("custom/test.js")
+require("custom/table_links.js")
+//require("custom/test.js")
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
@@ -18,3 +19,13 @@ require("custom/test.js")
 //= require cocoon
 import 'bootstrap'
 import './src/application.scss'
+$(document).ready(function() {
+
+    $('#example tr').click(function() {
+        var href = $(this).find("a").attr("href");
+        if(href) {
+            window.location = href;
+        }
+    });
+
+});
