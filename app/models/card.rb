@@ -1,4 +1,5 @@
 class Card < ApplicationRecord
+  belongs_to :hand
   enum rank: {
     two: 2,
     three: 3,

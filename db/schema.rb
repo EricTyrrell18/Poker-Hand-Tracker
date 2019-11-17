@@ -10,21 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_17_042722) do
+ActiveRecord::Schema.define(version: 2019_11_17_063028) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "boards", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "card_id"
+    t.integer "hand_id"
+  end
 
   create_table "cards", force: :cascade do |t|
     t.integer "rank"
     t.string "suit"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "hand_id"
   end
 
   create_table "hands", force: :cascade do |t|
     t.decimal "result"
     t.integer "poker_session_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "player_hands", force: :cascade do |t|
+    t.integer "hand_id"
+    t.integer "player_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -6,7 +6,8 @@ class HandsController < ApplicationController
   end
   
   def new
-    @hand = Hand.new
+    @poker_session = PokerSession.find(params[:poker_session_id])
+    @hand = @poker_session.hands.build
   end
   
   def create
