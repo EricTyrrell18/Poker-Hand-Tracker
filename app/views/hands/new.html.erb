@@ -3,9 +3,4 @@
 <%= render 'board' %>
 <%= simple_form_for(@hand, url: poker_session_hands_path(@poker_session.id)) do |f| %>
   <%= f.input :result %>
-  <% 5.times do %>
-    <%= f.simple_fields_for :cards do |ff| %>
-      <%= render 'card_fields', ff: ff %>
-    <% end %>
-  <% end %>
 <% end %>

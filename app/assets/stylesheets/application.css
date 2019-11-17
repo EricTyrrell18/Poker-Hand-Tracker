@@ -17,4 +17,6 @@
 #board img[data-selected=true]{
   outline: 1px solid red;
 }
-
+#deck img[in-play=true]{
+  visibility: hidden;
+}

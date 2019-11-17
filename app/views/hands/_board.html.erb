@@ -1,9 +1,9 @@
 <div id="board" class="container">
   
   <span id="flop">
-    <% 3.times do %>
+      <%= image_tag 'PNG/gray_back.png', size: "37x75", data: {selected: true}  %>
       <%= image_tag 'PNG/gray_back.png', size: "37x75" %>
-    <% end %>
+      <%= image_tag 'PNG/gray_back.png', size: "37x75" %>
   </span>
 
   <span id="turn">
@@ -11,7 +11,7 @@
   </span>
 
   <span>
-    <%= image_tag 'PNG/gray_back.png', size: "37x75", id: "river", data: {selected: true} %>
+    <%= image_tag 'PNG/gray_back.png', size: "37x75", id: "river" %>
   </span>
 
 </div>
